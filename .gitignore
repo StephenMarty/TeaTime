@@ -11,7 +11,6 @@
 # Other Files.
 !LICENSE
 !README.md
-!Assembly-CSharp.csproj
 !TeaTime.sln
 
 # Include git files
