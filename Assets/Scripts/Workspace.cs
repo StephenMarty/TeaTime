@@ -24,6 +24,10 @@ public class Workspace : MonoBehaviour
             DoTransition = true; //Settig this to true. That way it opens up when you hit Game Over!
             StartCoroutine(DelayOpen()); //After a second or two; of course!
         }
+        else
+        {
+            DoTransition = false;
+        }
     }
 
     void Update()
