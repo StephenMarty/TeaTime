@@ -15,14 +15,10 @@ public class Workspace : MonoBehaviour
     {
         Shutter = transform.GetChild(0);
         Table = transform.GetChild(1);
-        IsOpen = false;
+        IsOpen = true;
         DoTransition = false;
-
-        if (SceneManager.GetActiveScene().name != "Title")
-        {
-            //DoTransition = true; //Settig this to true. That way it opens up when you hit Game Over!
-            StartCoroutine(DelayOpen()); //After a second or two; of course!
-        }
+        Table.position = new Vector3(0, 0.3f, 0);
+        Shutter.position = new Vector3(0, 6.54f, 0);
     }
 
     void Update()
