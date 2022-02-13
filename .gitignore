@@ -2,9 +2,6 @@
 /*
 
 # Include Important Folders
-!src/
-!libs/
-!archive
 !.vscode/
 !Assets/
 !Packages/
@@ -14,7 +11,6 @@
 # Other Files.
 !LICENSE
 !README.md
-!todo.txt
 !Assembly-CSharp.csproj
 !TeaTime.sln
 
