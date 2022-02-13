@@ -24,11 +24,16 @@ public class MenuScript : MonoBehaviour
     {
         GManager.ControlsEnabled = true;
         WSpace.Toggle();
-        transform.gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void ExitTask()
     {
         Application.Quit();
+    }
+
+    public void ShowIngredients(bool boolean)
+    {
+        transform.GetChild(1).gameObject.SetActive(boolean);
     }
 }

@@ -8,6 +8,7 @@ public class Workspace : MonoBehaviour
     private Transform Shutter;
     private Transform Table;
     private bool IsOpen;
+    public MenuScript Menu;
 
     private bool DoTransition;
 
@@ -50,6 +51,7 @@ public class Workspace : MonoBehaviour
     public void Toggle()
     {
         DoTransition = true;
+        Menu.ShowIngredients(!IsOpen);
     }
 
     //Checks if workspace is closed without accessing private variables. also sets IsOpen to false as needed.
