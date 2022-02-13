@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClickObject : MonoBehaviour
 {
-    public float Cooldown = 6f;
+    public float Cooldown = 0.5f;
     private float LastClick = 0f;
 
     private void OnMouseDown()

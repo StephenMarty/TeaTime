@@ -9,7 +9,6 @@ public class Workspace : MonoBehaviour
     private Transform Table;
     private bool IsOpen;
 
-    //private float TransitionStep;
     private bool DoTransition;
 
     void Start()
@@ -18,6 +17,7 @@ public class Workspace : MonoBehaviour
         Table = transform.GetChild(1);
         IsOpen = false; 
 
+<<<<<<< HEAD
         //TransitionStep = 0f;
 
         if (SceneManager.GetActiveScene().name != "Title")
@@ -25,6 +25,9 @@ public class Workspace : MonoBehaviour
             DoTransition = true; //Settig this to true. That way it opens up when you hit Game Over!
             StartCoroutine(DelayOpen()); //After a second or two; of course!
         }
+=======
+        DoTransition = false;
+>>>>>>> refs/remotes/origin/main
     }
 
     void Update()
@@ -35,14 +38,6 @@ public class Workspace : MonoBehaviour
 
             Shutter.position += new Vector3(0, (IsOpen ? 1 : -1) * Speed * 0.85f, 0);
             Table.position += new Vector3(0, (IsOpen ? -1 : 1) * Speed, 0);
-
-            /*TransitionStep += Time.unscaledDeltaTime;
-            if (TransitionStep >= 0.3f)
-            {
-                DoTransition = false;
-                TransitionStep = 0f;
-                IsOpen = !IsOpen;
-            }*/
 
             if (!IsOpen && Table.position.y >= 0.3f)
             {
