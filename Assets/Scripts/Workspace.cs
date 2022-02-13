@@ -17,7 +17,6 @@ public class Workspace : MonoBehaviour
         Table = transform.GetChild(1);
         IsOpen = false; 
 
-<<<<<<< HEAD
         //TransitionStep = 0f;
 
         if (SceneManager.GetActiveScene().name != "Title")
@@ -25,9 +24,6 @@ public class Workspace : MonoBehaviour
             DoTransition = true; //Settig this to true. That way it opens up when you hit Game Over!
             StartCoroutine(DelayOpen()); //After a second or two; of course!
         }
-=======
-        DoTransition = false;
->>>>>>> refs/remotes/origin/main
     }
 
     void Update()
