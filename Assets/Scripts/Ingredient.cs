@@ -26,19 +26,19 @@ public class Ingredient : ClickObject
         switch (Type)
         {
             case "Sugar":
-                Kettle.GetComponent<Kettle>().AddIngredient("Sugar");
+                Kettle.GetComponent<KettleManager>().AddIngredient("Sugar");
                 break;
             case "Honey":
-                Kettle.GetComponent<Kettle>().AddIngredient("Honey");
+                Kettle.GetComponent<KettleManager>().AddIngredient("Honey");
                 break;
             case "Chamomile":
-                Kettle.GetComponent<Kettle>().AddIngredient("Chamomile");
+                Kettle.GetComponent<KettleManager>().AddIngredient("Chamomile");
                 break;
             case "Green Tea":
-                Kettle.GetComponent<Kettle>().AddIngredient("Green Tea");
+                Kettle.GetComponent<KettleManager>().AddIngredient("Green Tea");
                 break;
             case "Black Tea":
-                Kettle.GetComponent<Kettle>().AddIngredient("Black Tea");
+                Kettle.GetComponent<KettleManager>().AddIngredient("Black Tea");
                 break;
             default:
                 Debug.Log("Invalid Type value!");

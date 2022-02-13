@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kettle : MonoBehaviour
+public class Kettle : ClickObject
 {
-    private List<string> Ingredients = new List<string>();
+    public List<string> Ingredients = new List<string>();
+    public int ID;
 
     private void Start()
     {
@@ -14,5 +15,10 @@ public class Kettle : MonoBehaviour
     public void AddIngredient(string Type)
     {
         Ingredients.Add(Type);
+    }
+
+    public override void FireMouseEvent()
+    {
+        transform.parent.GetComponent<KettleManager>().SetArrow(gameObject, ID);
     }
 }
