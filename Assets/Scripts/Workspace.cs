@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Workspace : MonoBehaviour
 {
@@ -15,10 +16,15 @@ public class Workspace : MonoBehaviour
     {
         Shutter = transform.GetChild(0);
         Table = transform.GetChild(1);
-        IsOpen = false;
+        IsOpen = false; 
 
         //TransitionStep = 0f;
-        DoTransition = false;
+
+        if (SceneManager.GetActiveScene().name != "Title")
+        {
+            DoTransition = true; //Settig this to true. That way it opens up when you hit Game Over!
+            StartCoroutine(DelayOpen()); //After a second or two; of course!
+        }
     }
 
     void Update()
@@ -59,4 +65,18 @@ public class Workspace : MonoBehaviour
     {
         DoTransition = true;
     }
-}
+
+    //Checks if workspace is closed without accessing private variables. also sets IsOpen to false as needed.
+    public bool Closed(){
+        IsOpen = false;
+        return Table.position.y == 0.3f;
+    }
+
+
+    IEnumerator DelayOpen()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Toggle();
+    }
+
+}   
