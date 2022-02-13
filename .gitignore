@@ -1,0 +1,23 @@
+# exclude all
+/*
+
+# Include Important Folders
+!src/
+!libs/
+!archive
+!.vscode/
+!Assets/
+!Packages/
+!ProjectSettings/
+!UserSettings/
+
+# Other Files.
+!LICENSE
+!README.md
+!todo.txt
+!Assembly-CSharp.csproj
+!TeaTime.sln
+
+# Include git files
+!.gitmodules
+!.gitignore
