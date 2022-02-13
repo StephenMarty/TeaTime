@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //for things like Game Over
 
 public class Orders : MonoBehaviour
 {
@@ -79,6 +80,8 @@ public class Orders : MonoBehaviour
             if (Ord.TimeRemaining <= 0f)
             {
                 //Ran out of time; game over?
+                //Game Over indeed :)
+                SceneManager.LoadScene("Game Over");
             }
         }
     }
