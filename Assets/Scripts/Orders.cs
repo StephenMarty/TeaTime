@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement; //for things like Game Over
 
 public class Orders : MonoBehaviour
 {
+    [SerializeField] Workspace workspace; //Our general Workspace
     public class Tea
     {
         public int Sugar = 0;
@@ -69,19 +70,28 @@ public class Orders : MonoBehaviour
 
     void Start()
     {
-        //MakeOrder();
+        //Testing GameOver screen
+        MakeOrder();
+        OrderList[0].TimeRemaining = 3f;
     }
 
     void Update()
     {
+
+
         foreach (Order Ord in OrderList)
         {
             Ord.TimeRemaining -= Time.deltaTime;
             if (Ord.TimeRemaining <= 0f)
             {
-                //Ran out of time; game over?
-                //Game Over indeed :)
-                SceneManager.LoadScene("Game Over");
+
+                //Close the Shutters
+                workspace.Toggle();
+                
+
+                //Then Game Over :(
+                if (workspace.Closed()) 
+                    SceneManager.LoadScene("Game Over");
             }
         }
     }
