@@ -70,28 +70,17 @@ public class Orders : MonoBehaviour
 
     void Start()
     {
-        //Testing GameOver screen
         MakeOrder();
-        OrderList[0].TimeRemaining = 3f;
     }
 
     void Update()
     {
-
-
         foreach (Order Ord in OrderList)
         {
             Ord.TimeRemaining -= Time.deltaTime;
             if (Ord.TimeRemaining <= 0f)
             {
-
-                //Close the Shutters
-                workspace.Toggle();
-                
-
-                //Then Game Over :(
-                if (workspace.Closed()) 
-                    SceneManager.LoadScene("Game Over");
+                Debug.Log("GAME OVER");
             }
         }
     }

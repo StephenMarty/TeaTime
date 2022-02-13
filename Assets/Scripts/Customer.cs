@@ -18,7 +18,7 @@ public class Customer : MonoBehaviour
     {
         if (DoMove)
         {
-            float speed = 1.5f;
+            float speed = 2f;
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, Target, step);
 
@@ -32,7 +32,7 @@ public class Customer : MonoBehaviour
 
     public void ToCounter()
     {
-        Target = new Vector3(4.1f, -1.9f, 0f);
+        Target = new Vector3(5f, -1.9f, 0f);
         DoMove = true;
     }
 
