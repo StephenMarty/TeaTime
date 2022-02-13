@@ -15,18 +15,13 @@ public class Workspace : MonoBehaviour
     {
         Shutter = transform.GetChild(0);
         Table = transform.GetChild(1);
-        IsOpen = false; 
-
-        //TransitionStep = 0f;
+        IsOpen = false;
+        DoTransition = false;
 
         if (SceneManager.GetActiveScene().name != "Title")
         {
-            DoTransition = true; //Settig this to true. That way it opens up when you hit Game Over!
+            //DoTransition = true; //Settig this to true. That way it opens up when you hit Game Over!
             StartCoroutine(DelayOpen()); //After a second or two; of course!
-        }
-        else
-        {
-            DoTransition = false;
         }
     }
 
@@ -71,7 +66,7 @@ public class Workspace : MonoBehaviour
     IEnumerator DelayOpen()
     {
         yield return new WaitForSeconds(1.5f);
-        Toggle();
+        if (!IsOpen) { Toggle(); }
     }
 
 }   
